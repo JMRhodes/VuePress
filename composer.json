@@ -21,10 +21,10 @@
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/debug-bar": "0.9",
     "wpackagist-plugin/developer": "1.2.6",
-    "wpackagist-plugin/regenerate-thumbnails": "2.2.6",
-    "wpackagist-plugin/user-switching": "1.0.9",
-    "wpackagist-plugin/wp-migrate-db": "0.9.2",
-    "wpackagist-plugin/wordpress-seo": "4.9"
+    "wpackagist-plugin/regenerate-thumbnails": "^2.3",
+    "wpackagist-plugin/user-switching": "^1.0",
+    "wpackagist-plugin/wp-migrate-db": "^1.0",
+    "wpackagist-plugin/wordpress-seo": "^5.5"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
