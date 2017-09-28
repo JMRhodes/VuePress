@@ -48,7 +48,7 @@ vendor
 !app/themes/pressed/vendor
 
 # Ignore build directory
-build
+public
 
 # Node Package Manager
 bower_components
