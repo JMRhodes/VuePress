@@ -1,22 +1,12 @@
-# Ignored theme files
-*.sass-cache*
-*.log
+.DS_Store
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
 
-# Vendor (e.g. Composer)
-vendor
-
-# Ignore build directory
-build
-# /languages/*.pot
-
-# Node Package Manager
-node_modules
-
-# Bower Components
-bower_components
-
-# Mac
-*.DS_Store
-thumbs.db
+# Editor directories and files
 .idea
-
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
