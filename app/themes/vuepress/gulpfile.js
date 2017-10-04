@@ -37,7 +37,7 @@ gulp.task('build:scripts:vendor', function () {
             suffix: '.min'
         }))
         .pipe($.uglify().on('error', swallowError))
-        .pipe(gulp.dest('build/js'));
+        .pipe(gulp.dest('dist/js'));
 });
 
 // Concatenate & Minify all theme javascript files
@@ -47,7 +47,7 @@ gulp.task('dev:scripts:vendor', function () {
         .pipe($.rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('build/js'));
+        .pipe(gulp.dest('dist/js'));
 });
 
 // Concatenate & Minify all theme javascript files
@@ -58,7 +58,7 @@ gulp.task('build:scripts:theme', function () {
             suffix: '.min'
         }))
         .pipe($.uglify().on('error', swallowError))
-        .pipe(gulp.dest('build/js'));
+        .pipe(gulp.dest('dist/js'));
 });
 
 // Concatenate & Minify all theme javascript files
@@ -68,7 +68,7 @@ gulp.task('dev:scripts:theme', function () {
         .pipe($.rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('build/js'));
+        .pipe(gulp.dest('dist/js'));
 });
 
 // Copy bower package fonts into version control
@@ -91,7 +91,7 @@ gulp.task('build:styles', function () {
             suffix: '.min'
         }))
         .pipe($.sourcemaps.write('.'))
-        .pipe(gulp.dest('build/css'))
+        .pipe(gulp.dest('dist/css'))
 });
 
 // Compile uncompressed CSS
@@ -108,7 +108,7 @@ gulp.task('dev:styles', function () {
             basename: "theme",
             suffix: '.min'
         }))
-        .pipe(gulp.dest('build/css'))
+        .pipe(gulp.dest('dist/css'))
 });
 
 // run JS lint on theme scripts

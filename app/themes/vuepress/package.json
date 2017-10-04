@@ -5,10 +5,11 @@
   "author": "Justin Rhodes <justin.m.rhodes@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "dev": "webpack --progress --colors --watch",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "bulma": "^0.5.3",
     "vue": "^2.4.4"
   },
   "devDependencies": {

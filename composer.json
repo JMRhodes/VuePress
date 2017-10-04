@@ -19,12 +19,9 @@
     "johnpbloch/wordpress": "^4.8",
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "wpackagist-plugin/debug-bar": "0.9",
-    "wpackagist-plugin/developer": "1.2.6",
     "wpackagist-plugin/regenerate-thumbnails": "^2.0",
     "wpackagist-plugin/user-switching": "^1.0",
-    "wpackagist-plugin/wp-migrate-db": "^1.0",
-    "wpackagist-plugin/wordpress-seo": "^5.0"
+    "wpackagist-plugin/wp-migrate-db": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
