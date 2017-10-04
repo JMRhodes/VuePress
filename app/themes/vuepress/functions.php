@@ -10,7 +10,6 @@ use AD\App\Setup;
 use AD\App\Scripts;
 use AD\App\Media;
 use AD\App\ACF;
-use AD\App\Shortcodes;
 
 /**
  * Define Theme Version
@@ -29,29 +28,10 @@ add_action( 'after_setup_theme', function () {
         ->add( new Setup() )
         ->add( new Scripts() )
         ->add( new ACF() )
-        ->add( new Shortcodes() )
         ->initialize();
     new Media();
 
-    // Translation setup
-    load_theme_textdomain( 'ad-starter', AD_THEME_DIR . '/languages' );
-
-    // Theme layouts.
-    add_theme_support( 'theme-layouts', [ 'default' => is_rtl() ? 'sidebar-left' : 'sidebar' ] );
-
-    // Add automatic feed links in header
-    add_theme_support( 'automatic-feed-links' );
-
     // Add Post Thumbnail Image sizes and support
     add_theme_support( 'post-thumbnails' );
-
-    // Switch default core markup to output valid HTML5.
-    add_theme_support( 'html5', [
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption'
-    ] );
 
 } );
