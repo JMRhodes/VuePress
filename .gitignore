@@ -1,17 +1,3 @@
-.DS_Store
-node_modules/
-dist/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Editor directories and files
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-
 # Application
 app/upgrade
 app/uploads
@@ -48,11 +34,13 @@ vendor
 !app/themes/pressed/vendor
 
 # Ignore build directory
-public
+build
 
 # Node Package Manager
+node_modules
 bower_components
 
 # Ignored theme files
 *.sass-cache*
 *.log
+.idea
