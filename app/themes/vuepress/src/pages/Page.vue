@@ -5,11 +5,13 @@
             <div class="hero-body">
                 <!--<img src="./../assets/logo.svg">-->
 
-                <h1 class="title">{{ pageSlug }}</h1>
+                <h1 class="title">{{ pageTitle }}</h1>
             </div>
         </section>
+        <section class="section" v-html="pageContent">
+            {{pageContent}}
 
-        {{pageData}}
+        </section>
     </div>
 </template>
 
@@ -20,7 +22,8 @@
     name: 'Page',
     data(){
       return {
-        pageSlug: ' ',
+        pageTitle: ' ',
+        pageContent: ' ',
         pageData: []
       }
     },
@@ -30,7 +33,9 @@
     created(){
       axios.get('http://vuepress.local/wp-json/wp/v2/pages/?slug=' + this.$route.params.pageSlug)
         .then(response => {
-          this.pageSlug = response.data[0].title.rendered;
+          console.log(response.data);
+          this.pageTitle = response.data[0].title.rendered;
+          this.pageContent = response.data[0].content.rendered;
           this.pageData = response.data[0];
         })
         .catch(e => {

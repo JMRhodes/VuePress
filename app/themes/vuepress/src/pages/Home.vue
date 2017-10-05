@@ -8,11 +8,13 @@
                 <h1 class="title">{{ msg }}</h1>
             </div>
         </section>
+        <appposts></appposts>
     </div>
 </template>
 
 <script>
   import appheader from './../components/header.vue';
+  import appposts from './../components/posts.vue';
   export default {
     name: 'Home',
     data () {
@@ -21,7 +23,8 @@
       }
     },
     components: {
-      appheader
+      appheader,
+      appposts
     }
   }
 </script>
