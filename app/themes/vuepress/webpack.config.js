@@ -1,6 +1,13 @@
 var path = require('path')
 var webpack = require('webpack')
 
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractSass = new ExtractTextPlugin({
+  filename: "[name].[contenthash].css",
+  disable: process.env.NODE_ENV === "development"
+});
+
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -36,6 +43,18 @@ module.exports = {
           name: '[name].[ext]?[hash]',
           publicPath: '/app/themes/vuepress/dist/'
         }
+      },
+      {
+        test: /\.scss$/,
+        use: extractSass.extract({
+          use: [{
+            loader: "css-loader"
+          }, {
+            loader: "sass-loader"
+          }],
+          // use style-loader in development
+          fallback: "style-loader"
+        })
       }
     ]
   },

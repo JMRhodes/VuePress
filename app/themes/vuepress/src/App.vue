@@ -1,7 +1,8 @@
 <template>
     <div id="app">
-        <img src="./assets/logo.png">
-        <h1>{{ msg }}</h1>
+        <img src="./assets/logo.svg">
+
+        <h1 class="title">{{ msg }}</h1>
     </div>
 </template>
 
@@ -10,7 +11,7 @@
     name: 'app',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js/WordPress App.'
+        msg: 'Welcome.'
       }
     }
   }
@@ -26,21 +27,8 @@
         margin-top: 60px;
     }
 
-    h1, h2 {
-        font-weight: normal;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    li {
-        display: inline-block;
-        margin: 0 10px;
-    }
-
-    a {
-        color: #42b983;
+    img {
+        max-width: 128px;
+        height: auto;
     }
 </style>
