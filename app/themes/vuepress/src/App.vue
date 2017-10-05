@@ -9,10 +9,3 @@
     name: 'app'
   }
 </script>
-
-<style lang="scss">
-    img {
-        max-width: 128px;
-        height: auto;
-    }
-</style>

@@ -11,6 +11,7 @@
         <section class="section" v-html="pageContent">
             {{pageContent}}
 
+
         </section>
     </div>
 </template>
@@ -30,17 +31,24 @@
     components: {
       appheader
     },
-    created(){
-      axios.get('http://vuepress.local/wp-json/wp/v2/pages/?slug=' + this.$route.params.pageSlug)
-        .then(response => {
-          console.log(response.data);
-          this.pageTitle = response.data[0].title.rendered;
-          this.pageContent = response.data[0].content.rendered;
-          this.pageData = response.data[0];
-        })
-        .catch(e => {
-          this.errors.push(e)
-        })
+    created () {
+      this.fetchData()
+    },
+    watch: {
+      '$route': 'fetchData'
+    },
+    methods: {
+      fetchData () {
+        axios.get('http://vuepress.local/wp-json/wp/v2/pages/?slug=' + this.$route.params.pageSlug)
+          .then(response => {
+            this.pageTitle = response.data[0].title.rendered;
+            this.pageContent = response.data[0].content.rendered;
+            this.pageData = response.data[0];
+          })
+          .catch(e => {
+            this.errors.push(e)
+          })
+      }
     }
   }
 </script>
