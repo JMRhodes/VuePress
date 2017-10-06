@@ -1,21 +1,25 @@
 <template>
-    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
-        <router-link :to="'/'" class="navbar-item">
-            <img src="./../assets/logo.svg" width="36" height="28">
-        </router-link>
+    <div class="container">
+        <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+            <router-link :to="'/'" class="navbar-item">
+                <img src="./../assets/logo.svg" width="36" height="28">
+            </router-link>
 
-        <router-link :to="'/about'" class="navbar-item">
-            About
-        </router-link>
+            <router-link :to="'/about'" class="navbar-item">
+                About
 
-        <router-link :to="'/sample-page'" class="navbar-item">
-            Sample Page
-        </router-link>
+            </router-link>
 
-        <!--<router-link :to="item.title" class="navbar-item" :data="menuItems" :key="menuItems.ID" v-for="item in menuItems">-->
+            <router-link :to="'/sample-page'" class="navbar-item">
+                Sample Page
+
+            </router-link>
+
+            <!--<router-link :to="item.title" class="navbar-item" :data="menuItems" :key="menuItems.ID" v-for="item in menuItems">-->
             <!--{{item.title}}-->
-        <!--</router-link>-->
-    </nav>
+            <!--</router-link>-->
+        </nav>
+    </div>
 </template>
 
 <script>

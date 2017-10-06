@@ -4,7 +4,7 @@ var webpack = require('webpack')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin({
-  filename: "[name].[contenthash].css",
+  filename: "css/app.css",
   disable: process.env.NODE_ENV === "development"
 });
 
@@ -47,20 +47,18 @@ module.exports = {
       {
         test: /\.scss$/,
         use: extractSass.extract({
-          use: [{
-            loader: "css-loader"
-          }, {
-            loader: "sass-loader"
-          }],
-          // use style-loader in development
-          fallback: "style-loader"
+          use: ['css-loader', 'sass-loader']
         })
       }
     ]
   },
+  plugins: [
+    extractSass
+  ],
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      'styles$': path.join(__dirname, 'assets/scss')
     }
   },
   devServer: {

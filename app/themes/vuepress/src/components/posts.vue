@@ -1,24 +1,26 @@
 <template>
-    <section class="section columns is-multiline">
-        <div class="column is-3" v-for="item in postItems">
-            <div class="box">
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>{{item.title.rendered}}</strong>
-                                <small>{{item.date}}</small>
-                                <div v-html="item.excerpt.rendered">
-                                    {{item.excerpt.rendered}}
-
-                                </div>
-                            </p>
+    <div class="container">
+        <section class="section columns is-multiline">
+            <div class="column is-3" v-for="item in postItems">
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>{{item.title.rendered}}</strong>
+                                    <br/>
+                                    <small>{{item.date}}</small>
+                                    <div v-html="item.excerpt.rendered">
+                                        {{item.excerpt.rendered}}
+                                    </div>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </template>
 
 <script>
@@ -33,7 +35,7 @@
     created(){
       axios.get('http://vuepress.local/wp-json/wp/v2/posts')
         .then(response => {
-          console.log(response.data);
+//          console.log(response.data);
           this.postItems = response.data;
         })
         .catch(e => {

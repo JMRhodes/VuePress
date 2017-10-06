@@ -17,14 +17,3 @@ body {
 a {
     text-decoration: none;
 }
-
-.row-flex-content {
-    margin-top: $grid-gutter-width;
-    margin-bottom: $grid-gutter-width;
-}
-
-.row_tabs {
-    .col-tabs {
-        margin-bottom: ($grid-gutter-width / 2);
-    }
-}
